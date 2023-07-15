@@ -191,33 +191,65 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/api'
+                  $ref: '#/components/schemas/Job'
               example:
                 - id: 1
                   title: フロントエンド開発者募集
+                  body: 現在フロントエンド開発者を募集しております。大規模開発の
+                  published_at: 2023/7/10
+                  image_url: http://job.company.example.com/job/1.jpg
                   price: ¥7,500,000/年
                   company:
                     id: 1
                     name: Job Ltd
-                    address: アメリカ合衆国
+                    address: アメリカ合衆国〇〇
+                    country:
+                      id: 1
+                      name: アメリカ合衆国
                   category:
                     id: 1
                     name: フロントエンド開発
+                  contract_type:
+                    id: 1
+                    name: 業務委託
+                  itemtag:
+                    - id: 1
+                      title: Nuxt.js
+                    - id: 2
+                      title: Vue.js
+                  remote:
+                    id: 1
+                    name: フルリモート
                 - id: 2
                   title: バックエンド開発者募集
+                  body: 現在バックエンド開発者を募集しております。大規模開発の
+                  published_at: 2023/7/10
+                  image_url: http://job.company.example.com/job/2.jpg
                   price: ¥8,500,000/年
                   company:
                     id: 1
                     name: Job Ltd
-                    address: アメリカ合衆国
+                    address: アメリカ合衆国〇〇
+                    country:
+                      id: 1
+                      name: アメリカ合衆国
                   category:
+                    id: 2
+                    name: バックエンド開発
+                  contract_type:
                     id: 1
-                    name: フロントエンド開発
+                    name: 業務委託
+                  itemtag:
+                    - id: 3
+                      title: Go
+                  remote:
+                    id: 1
+                    name: フルリモート
         '400':
           description: Invalid ID supplied
         '404':
           description: Job not found
-  /api/job/{jobId}:
+  /job/{jobId}:
     get:
       tags:
         - job
@@ -243,15 +275,84 @@ paths:
                 id: 1
                 title: フロントエンド開発者募集
                 body: 現在フロントエンド開発者募集を募集しております。大規模開発の...
+                published_at: 2023/07/31
                 price: ¥7,500,000/年
                 company:
                   id: 1
                   name: Job Ltd
                   address: アメリカ合衆国
+                  country:
+                    id: 1
+                    name: アメリカ合衆国
                 category:
                   id: 1
                   name: フロントエンド開発
+                contract_type:
+                  id: 1
+                  name: 業務委託
+                itemtag:
+                  - id: 1
+                    title: Nuxt.js
+                  - id: 2
+                    title: Vue.js
+                remote:
+                  id: 1
+                  name: フルリモート
+                image_url: http://job.company.example.com/job/2.jpg
                 url: http://job.company.example.com/job/100
+                relate:
+                  - id: 1
+                    title: フロントエンド開発者募集
+                    body: 現在フロントエンド開発者を募集しております。大規模開発の
+                    published_at: 2023/7/10
+                    image_url: http://job.company.example.com/job/1.jpg
+                    price: ¥7,500,000/年
+                    company:
+                      id: 1
+                      name: Job Ltd
+                      address: アメリカ合衆国〇〇
+                      country:
+                        id: 1
+                        name: アメリカ合衆国
+                    category:
+                      id: 1
+                      name: フロントエンド開発
+                    contract_type:
+                      id: 1
+                      name: 業務委託
+                    itemtag:
+                      - id: 1
+                        title: Nuxt.js
+                      - id: 2
+                        title: Vue.js
+                    remote:
+                      id: 1
+                      name: フルリモート
+                  - id: 2
+                    title: バックエンド開発者募集
+                    body: 現在バックエンド開発者を募集しております。大規模開発の
+                    published_at: 2023/7/10
+                    image_url: http://job.company.example.com/job/2.jpg
+                    price: ¥8,500,000/年
+                    company:
+                      id: 1
+                      name: Job Ltd
+                      address: アメリカ合衆国〇〇
+                      country:
+                        id: 1
+                        name: アメリカ合衆国
+                    category:
+                      id: 2
+                      name: バックエンド開発
+                    contract_type:
+                      id: 1
+                      name: 業務委託
+                    itemtag:
+                      - id: 3
+                        title: Go
+                    remote:
+                      id: 1
+                      name: フルリモート
         '400':
           description: Invalid ID supplied
         '404':
