@@ -23,19 +23,19 @@
 
 # DB設計
 - `工数目安：6h`
-- ファイル：[Fhase1_ER.pdf](https://github.com/myaaaapon/global-job-portal-document/blob/main/Fhase1_ER.pdf)
+- ファイル：[Fhase1_ER.pdf](https://github.com/myaaaapon/global-job-document/blob/main/Fhase1_ER.pdf)
 
 ---
 
 # API設計
 - `工数目安：6h`
-- ファイル：[Fhase1_API.yml](https://github.com/myaaaapon/global-job-portal-document/blob/main/Fhase1_API.yml)
+- ファイル：[Fhase1_API.yml](https://github.com/myaaaapon/global-job-document/blob/main/Fhase1_API.yml)
 
 ---
 
 # 画面設計
 - `[工数目安]：6ページ=7.5h`
-- ファイル：[Fhase1_UI.pdf](https://github.com/myaaaapon/global-job-portal-document/blob/main/Fhase1_UI.pdf)
+- ファイル：[Fhase1_UI.pdf](https://github.com/myaaaapon/global-job-document/blob/main/Fhase1_UI.pdf)
 
 - `[2h]` HOMEページ
     - `[2h]` HOMEページ `完`
