@@ -38,9 +38,9 @@ paths:
                   name: 無料
                 tag:
                   - id: 1
-                    title: Nuxt.js
+                    name: Nuxt.js
                   - id: 2
-                    title: Vue.js
+                    name: Vue.js
                 match:
                   - id: 1
                     title: フロントエンド開発者募集
@@ -63,9 +63,9 @@ paths:
                       name: 業務委託
                     tag:
                       - id: 1
-                        title: Nuxt.js
+                        name: Nuxt.js
                       - id: 2
-                        title: Vue.js
+                        name: Vue.js
                     remote:
                       id: 1
                       name: フルリモート
@@ -90,7 +90,7 @@ paths:
                       name: 業務委託
                     tag:
                       - id: 3
-                        title: Go
+                        name: Go
                     remote:
                       id: 1
                       name: フルリモート
@@ -115,17 +115,13 @@ paths:
               email: test@example.com
               password: '12345'
               name: testuser
-              status:
-                id: 1
-                name: 無料
+              status_id: 1
               tag:
                 - id: 1
-                  title: Nuxt.js
                 - id: 2
-                  title: Vue.js
       responses:
         '200':
-          description: Update successfully
+          description: Create successfully
           content:
             application/json:
               schema:
@@ -134,7 +130,7 @@ paths:
                   message:
                     type: string
               example:
-                message: Update successfully
+                message: Create successfully
     put:
       tags:
         - user
@@ -147,29 +143,25 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
             example:
-              email: test@example.com
-              password: '12345'
-              name: testuser
-              status:
-                id: 1
-                name: 無料
+              email: test_updated@example.com
+              password: '12345_updated'
+              name: testuser_updated
+              status_id: 1
               tag:
                 - id: 1
-                  title: Nuxt.js
                 - id: 2
-                  title: Vue.js
       responses:
         '200':
-          description: Put successfully
+          description: Update successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                type: object
+                properties:
+                  message:
+                    type: string
               example:
-                id: 10
-                email: test@example.com
-                name: testuser
-                user_status_id: 1
+                message: Update successfully
     delete:
       tags:
         - user
@@ -187,10 +179,6 @@ paths:
                     type: string
               example:
                 message: Delete successfully
-        '400':
-          description: Invalid ID supplied
-        '404':
-          description: User not found
   /api/user/login:
     post:
       tags:
@@ -204,7 +192,7 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
             example:
-              id: test@example.com
+              email: test@example.com
               password: '12345'
       responses:
         '200':
@@ -223,8 +211,6 @@ paths:
               description: Authentication token
               schema:
                 type: string
-        '400':
-          description: Invalid input
   /api/user/logout:
     post:
       tags:
@@ -243,8 +229,6 @@ paths:
                     type: string
               example:
                 message: Logout successfully
-        '400':
-          description: Invalid input
   /api/job:
     get:
       tags:
@@ -282,9 +266,9 @@ paths:
                     name: 業務委託
                   tag:
                     - id: 1
-                      title: Nuxt.js
+                      name: Nuxt.js
                     - id: 2
-                      title: Vue.js
+                      name: Vue.js
                   remote:
                     id: 1
                     name: フルリモート
@@ -309,7 +293,7 @@ paths:
                     name: 業務委託
                   tag:
                     - id: 3
-                      title: Go
+                      name: Go
                   remote:
                     id: 1
                     name: フルリモート
@@ -360,9 +344,9 @@ paths:
                   name: 業務委託
                 tag:
                   - id: 1
-                    title: Nuxt.js
+                    name: Nuxt.js
                   - id: 2
-                    title: Vue.js
+                    name: Vue.js
                 remote:
                   id: 1
                   name: フルリモート
@@ -390,9 +374,9 @@ paths:
                       name: 業務委託
                     tag:
                       - id: 1
-                        title: Nuxt.js
+                        name: Nuxt.js
                       - id: 2
-                        title: Vue.js
+                        name: Vue.js
                     remote:
                       id: 1
                       name: フルリモート
@@ -417,7 +401,7 @@ paths:
                       name: 業務委託
                     tag:
                       - id: 3
-                        title: Go
+                        name: Go
                     remote:
                       id: 1
                       name: フルリモート
