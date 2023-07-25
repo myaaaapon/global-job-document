@@ -7,7 +7,7 @@ externalDocs:
   description: Find out more about Swagger
   url: /
 servers:
-  - url: /
+  - url: http://127.0.0.1:8000/
 tags:
   - name: user
     description: Operations about user
@@ -15,7 +15,7 @@ tags:
     description: Everything about your Jobs
     externalDocs:
       description: Find out more
-      url: /
+      url: http://127.0.0.1:8000/
 paths:
   /api/user:
     get:
@@ -235,6 +235,49 @@ paths:
         - job
       summary: Get all jobs
       description: Returns a list of all jobs
+      parameters:
+        - name: category_id
+          in: query
+          description: ID of the category to filter by
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: country_id
+          in: query
+          description: ID of the country to filter by
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: remote_id
+          in: query
+          description: ID of the remote to filter by
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: tag
+          in: query
+          description: List of tag IDs for filtering
+          required: false
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+        - name: limit
+          in: query
+          description: Number of results per page (10 or 30)
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 10
+              - 30
       responses:
         '200':
           description: Get successfully
@@ -297,17 +340,12 @@ paths:
                   remote:
                     id: 1
                     name: フルリモート
-        '400':
-          description: Invalid ID supplied
-        '404':
-          description: Job not found
-  /job/{jobId}:
+  /api/job/{jobId}:
     get:
       tags:
         - job
       summary: Get job by ID
       description: Returns a single job
-      operationId: getJobById
       parameters:
         - name: jobId
           in: path
@@ -405,10 +443,6 @@ paths:
                     remote:
                       id: 1
                       name: フルリモート
-        '400':
-          description: Invalid ID supplied
-        '404':
-          description: Job not found
 components:
   schemas:
     User:
